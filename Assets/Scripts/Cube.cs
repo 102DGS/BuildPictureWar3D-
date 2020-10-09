@@ -17,7 +17,7 @@ public class Cube : MonoBehaviour
     {
         if (transform.position.y <= -15f)
         {
-            transform.position = startPosition + new Vector3(0f, 0.5f, 0f);
+            transform.position = startPosition + new Vector3(0f, 3f, 0f);
             transform.rotation = startRotation;
         }
     }
