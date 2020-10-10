@@ -4,44 +4,48 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    RaycastHit[] allHits;
+    RaycastHit hit;
     Ray ray;
     public GameObject head;
-    Selectable selectable = null;
+    Selectable selectable;
+    LayerMask myLayerMask;
+    public int maxDistance = 10;
+    bool isGrabed = false;
 
     void Start()
     {
-        
+        myLayerMask = LayerMask.GetMask("Ground", "Selectable");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-        ray = new Ray(head.transform.position,head.transform.forward);
-        allHits = Physics.RaycastAll(ray,5f);
-        foreach (var hit in allHits)
+        if (Input.GetMouseButtonDown(0) ) Grab();
+    }
+
+    private void Grab()
+    {
+        if (isGrabed && selectable)
         {
+            selectable.Deselect();
             
+            return;
+        }
+
+        ray = new Ray(head.transform.position, head.transform.forward);
+        if (Physics.Raycast(ray, out hit, maxDistance, layerMask: myLayerMask))
+        {
+            Debug.Log(hit.collider.gameObject.tag);
             selectable = hit.collider.gameObject?.GetComponent<Selectable>();
             if (selectable)
             {
-                selectable.Select();
-            }
-            }
-        if (Input.GetMouseButton(0))
-        {
-            foreach (var hit in allHits)
-            {
-
-                selectable = hit.collider.gameObject?.GetComponent<Selectable>();
-                if (selectable)
-                {
-                    selectable.Deselect();
-                }
+                selectable.Select(Camera.main.transform);
             }
         }
-        allHits = null;
+        else
+        {
+            selectable = null;
+        }
+      
     }
-   
+
 }
