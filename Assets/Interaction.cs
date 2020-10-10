@@ -19,39 +19,36 @@ public class Interaction : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            if (isGrabed) Grab();
-            else Ungrab();
+        if (Input.GetMouseButtonDown(0)) 
+        {
+            if (!isGrabed) { Grab(); }
+            else { Ungrab(); }
+            
+        }
+           
     }
 
     private void Ungrab()
     {
-
+        if (selectable)
+        {
+            selectable.Deselect();
+        }
+        isGrabed = false;
     }
     private void Grab()
     {
-        if (isGrabed && selectable)
-        {
-            selectable.Deselect();
-            
-            return;
-        }
-
         ray = new Ray(head.transform.position, head.transform.forward);
         if (Physics.Raycast(ray, out hit, maxDistance, layerMask: myLayerMask))
         {
-            Debug.Log(hit.collider.gameObject.tag);
             selectable = hit.collider.gameObject?.GetComponent<Selectable>();
             if (selectable)
             {
                 selectable.Select(Camera.main.transform);
+                isGrabed = true;
             }
         }
-        else
-        {
-            selectable = null;
-        }
-      
+       
     }
 
 }
