@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116656519}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599733671089384195, guid: 98757170f8882b9469e075df0eeb5b32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2599733671089384193, guid: 98757170f8882b9469e075df0eeb5b32,
         type: 3}
@@ -217,6 +222,21 @@ PrefabInstance:
     - target: {fileID: 2599733671089384193, guid: 98757170f8882b9469e075df0eeb5b32,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599733669708709155, guid: 98757170f8882b9469e075df0eeb5b32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599733671021802430, guid: 98757170f8882b9469e075df0eeb5b32,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599733671149103021, guid: 98757170f8882b9469e075df0eeb5b32,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -437,9 +457,9 @@ GameObject:
   - component: {fileID: 798379712}
   - component: {fileID: 798379711}
   - component: {fileID: 798379710}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: test (1)
-  m_TagString: Untagged
+  m_TagString: WhiteCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -595,6 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 734215770}
+  maxDistance: 10
 --- !u!1 &2061404983
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,9 +630,9 @@ GameObject:
   - component: {fileID: 2061404985}
   - component: {fileID: 2061404988}
   - component: {fileID: 2061404989}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: test
-  m_TagString: Untagged
+  m_TagString: WhiteCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

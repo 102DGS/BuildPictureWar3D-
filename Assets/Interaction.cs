@@ -19,9 +19,15 @@ public class Interaction : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) ) Grab();
+        if (Input.GetMouseButtonDown(0))
+            if (isGrabed) Grab();
+            else Ungrab();
     }
 
+    private void Ungrab()
+    {
+
+    }
     private void Grab()
     {
         if (isGrabed && selectable)
