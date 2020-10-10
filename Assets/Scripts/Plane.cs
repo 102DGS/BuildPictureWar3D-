@@ -6,8 +6,10 @@ using UnityEngine.EventSystems;
 
 public class Plane : MonoBehaviour
 {
-    private SelectCube currentSelectable;
     public LayerMask layerMack;
+
+    private Color color;
+    public Color Color { get; set; }
 
     void Update()
     {
@@ -19,36 +21,9 @@ public class Plane : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit, layerMack))
         {
-            Debug.Log("It is work!");
+            Cube cube = hit.collider.gameObject.GetComponent<Cube>();
 
-            SelectCube selectable = hit.collider.gameObject.GetComponent<SelectCube>();
-
-            if (selectable)
-            {
-                if (currentSelectable && currentSelectable != selectable)
-                {
-                    currentSelectable.Deselect();
-                }
-
-                currentSelectable = selectable;
-                currentSelectable.Select();
-            }
-            else
-            {
-                if (currentSelectable)
-                {
-                    currentSelectable.Deselect();
-                    currentSelectable = null;
-                }
-            }
-        }
-        else
-        {
-            if (currentSelectable)
-            {
-                currentSelectable.Deselect();
-                currentSelectable = null;
-            }
+            Debug.Log($"{cube.GetComponent<Renderer>().material.color} ---- {color}");
         }
     }
 }
