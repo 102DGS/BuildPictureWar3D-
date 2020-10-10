@@ -31,6 +31,8 @@ public class Cube : MonoBehaviour
         {
             transform.position = startPosition + new Vector3(0f, 3f, 0f);
             transform.rotation = startRotation;
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         }
     }
 }
