@@ -9,9 +9,6 @@ public class Plane : MonoBehaviour
     private SelectCube currentSelectable;
     public LayerMask layerMack;
 
-    private string tag;
-    public string Tag { get; set; }
-
     void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
