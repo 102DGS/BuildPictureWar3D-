@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlaceForPictures : MonoBehaviour
 {
-    private const int rows = 5;
-    private const int columns = 5;
+    private const int rows = 3;
+    private const int columns = 3;
 
     private Plane plane;
 
@@ -26,7 +26,7 @@ public class PlaceForPictures : MonoBehaviour
         {
             for (int j = 0; j < columns; j++)
             {
-                Plane newPlane = Instantiate(plane, transform.position + new Vector3(j, 0f, -i), Quaternion.Euler(-90f, 0f, 0f));
+                Plane newPlane = Instantiate(plane, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
                 newPlane.transform.parent = transform;
                 newPlane.Color = colors[i*columns + j];
                 //Debug.Log("Loaded pixel : " + colors[i * columns + j]);
@@ -36,6 +36,30 @@ public class PlaceForPictures : MonoBehaviour
 
     void Update()
     {
-        
+        try
+        {
+            if (CheckPicture())
+            {
+                Debug.Log("Happy!!!");
+            }
+        }
+        catch
+        {
+            Debug.Log("Error");
+        }
+    }
+
+    private bool CheckPicture()
+    {
+        Plane[] planes = GetComponentsInChildren<Plane>();
+
+        foreach (var plane in planes)
+        {
+            if (plane.Color != plane.cubeColor)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

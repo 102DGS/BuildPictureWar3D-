@@ -9,6 +9,7 @@ public class Plane : MonoBehaviour
     public LayerMask layerMack;
 
     public Color Color;
+    public Color cubeColor;
 
     void Update()
     {
@@ -21,7 +22,14 @@ public class Plane : MonoBehaviour
         if (Physics.Raycast(ray, out hit, layerMack))
         {
             Cube cube = hit.collider.gameObject.GetComponent<Cube>();
-
+            if (cube)
+            {
+                cubeColor = cube.GetComponent<Renderer>().material.color;
+            }
+        }
+        else
+        {
+            cubeColor = new Color(0.5f, 0.5f, 0.5f, 0f);
         }
     }
 }
