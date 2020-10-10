@@ -8,8 +8,7 @@ public class Plane : MonoBehaviour
 {
     public LayerMask layerMack;
 
-    private Color color;
-    public Color Color { get; set; }
+    public Color Color;
 
     void Update()
     {
@@ -23,7 +22,6 @@ public class Plane : MonoBehaviour
         {
             Cube cube = hit.collider.gameObject.GetComponent<Cube>();
 
-            Debug.Log($"{cube.GetComponent<Renderer>().material.color} ---- {color}");
         }
     }
 }
