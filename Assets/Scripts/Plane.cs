@@ -6,13 +6,17 @@ using UnityEngine.EventSystems;
 
 public class Plane : MonoBehaviour
 {
-    public LayerMask layerMack;
+    private LayerMask layerMask;
 
     public Color Color;
     public Color cubeColor;
     Cube cube;
     bool withCube;
 
+    private void Start()
+    {
+        layerMask = HelpTool.selectableLayerMask;
+    }
     void Update()
     {
         Ray ray = new Ray(transform.position, transform.forward);
@@ -21,7 +25,7 @@ public class Plane : MonoBehaviour
 
         RaycastHit hit;
         
-        if (Physics.Raycast(ray, out hit, layerMack))
+        if (Physics.Raycast(ray, out hit, 5,layerMask))
         {
             cube = hit.collider.gameObject.GetComponent<Cube>();
             
