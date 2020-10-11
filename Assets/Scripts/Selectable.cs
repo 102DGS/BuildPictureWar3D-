@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Selectable : MonoBehaviour
 {
-    public Transform grabTransform;
     Color defaultColor;
     private void Awake()
     {
@@ -17,7 +16,7 @@ public class Selectable : MonoBehaviour
     {
         GetComponent<Renderer>().material.color = Color.yellow;
         this.transform.parent = transform;
-
+        GetComponent<Cube>().isGrabed = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
     public void Deselect()
@@ -25,6 +24,7 @@ public class Selectable : MonoBehaviour
         GetComponent<Renderer>().material.color = defaultColor;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         this.transform.parent = null;
+        GetComponent<Cube>().isGrabed = false;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
     }

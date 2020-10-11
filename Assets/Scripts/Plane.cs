@@ -10,6 +10,8 @@ public class Plane : MonoBehaviour
 
     public Color Color;
     public Color cubeColor;
+    Cube cube;
+    bool withCube;
 
     void Update()
     {
@@ -21,16 +23,23 @@ public class Plane : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit, layerMack))
         {
-            Cube cube = hit.collider.gameObject.GetComponent<Cube>();
+            cube = hit.collider.gameObject.GetComponent<Cube>();
+            
             if (cube)
             {
+                if (cube.isGrabed)
+                {
+                    return;
+                }
                 cubeColor = cube.GetComponent<Renderer>().material.color;
                 Attract(cube);
             }
+            
         }
         else
         {
             cubeColor = new Color(0.5f, 0.5f, 0.5f, 0f);
+            withCube = false;
         }
     }
 
@@ -41,8 +50,12 @@ public class Plane : MonoBehaviour
 
     private void Attract(Cube cube)
     {
-        cube.gameObject.transform.position = transform.position + transform.forward * 2;
+        if (withCube) return;
+        cube.gameObject.transform.position = transform.position + transform.forward * 0.6f;
+        cube.gameObject.transform.rotation = Quaternion.Euler(0,0,0);
         cube.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        withCube = true;
+        
     }
 }
     

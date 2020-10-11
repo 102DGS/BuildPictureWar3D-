@@ -6,7 +6,7 @@ public class Cube : MonoBehaviour
 {
     private Vector3 startPosition;
     private Quaternion startRotation;
-
+    public bool isGrabed = false;
     public Vector3 CurrentPosition 
     {
         get { return transform.position; }
