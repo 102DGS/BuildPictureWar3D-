@@ -32,5 +32,11 @@ public class Plane : MonoBehaviour
             cubeColor = new Color(0.5f, 0.5f, 0.5f, 0f);
         }
     }
+
+    public bool isRightCube()
+    {
+        return Color == cubeColor;
+    }
+
 }
     

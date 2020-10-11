@@ -6,6 +6,7 @@ using UnityEngine;
 
 public static class HelpTool
 {
+    
     public static LayerMask selectableLayerMask = 512;
     public static Color[] imageToByteArray(string filePath)
     {
@@ -28,5 +29,10 @@ public static class HelpTool
         width = tex.width;
 
         return (pix);
+    }
+
+    public static int numberOfPngInDirectory(string path)
+    {
+        return Directory.GetFiles(path, "*.png", SearchOption.AllDirectories).Length;
     }
 }
