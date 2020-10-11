@@ -25,6 +25,7 @@ public class Plane : MonoBehaviour
             if (cube)
             {
                 cubeColor = cube.GetComponent<Renderer>().material.color;
+                Attract(cube);
             }
         }
         else
@@ -38,5 +39,10 @@ public class Plane : MonoBehaviour
         return Color == cubeColor;
     }
 
+    private void Attract(Cube cube)
+    {
+        cube.gameObject.transform.position = transform.position + transform.forward * 2;
+        cube.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+    }
 }
     
