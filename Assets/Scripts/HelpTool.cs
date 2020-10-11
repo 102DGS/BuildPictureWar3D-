@@ -15,5 +15,18 @@ public static class HelpTool
         Color[] pix = tex.GetPixels();
         //Пиксели с картинки считаются снизу вверх справ влево , те элемент на нулевой позиции будет левым нижним , на второй правее от него
         return (pix);
-    } 
+    }
+    public static Color[] imageToByteArray(string filePath, out int height, out int  width)
+    {
+        byte[] imageData = File.ReadAllBytes(filePath);
+        Texture2D tex = new Texture2D(2, 2);
+        tex.LoadImage(imageData);
+        Color[] pix = tex.GetPixels();
+        //Пиксели с картинки считаются снизу вверх справ влево , те элемент на нулевой позиции будет левым нижним , на второй правее от него
+
+        height = tex.height;
+        width = tex.width;
+
+        return (pix);
+    }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlaceForPictures : MonoBehaviour
 {
-    private const int rows = 3;
-    private const int columns = 3;
+    private int rows;
+    private int columns;
 
     private Plane plane;
 
@@ -13,7 +13,9 @@ public class PlaceForPictures : MonoBehaviour
 
     private void Awake()
     {
-        Color[] colors = HelpTool.imageToByteArray(Application.dataPath + "/2.png");
+
+
+        Color[] colors = HelpTool.imageToByteArray(Application.dataPath + $"/{1}.png",out rows,out columns);
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
