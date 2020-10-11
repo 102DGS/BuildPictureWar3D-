@@ -18,6 +18,7 @@ public class Selectable : MonoBehaviour
         this.transform.parent = transform;
         GetComponent<Cube>().isGrabed = true;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        gameObject.layer = LayerMask.NameToLayer("Grabed");
     }
     public void Deselect()
     {
@@ -26,6 +27,7 @@ public class Selectable : MonoBehaviour
         this.transform.parent = null;
         GetComponent<Cube>().isGrabed = false;
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        gameObject.layer = LayerMask.NameToLayer("Cube");
 
     }
     
