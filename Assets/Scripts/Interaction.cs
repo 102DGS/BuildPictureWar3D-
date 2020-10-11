@@ -14,7 +14,7 @@ public class Interaction : MonoBehaviour
 
     void Start()
     {
-        myLayerMask = LayerMask.GetMask("Ground", "Selectable");
+        myLayerMask = HelpTool.selectableLayerMask;
     }
 
     private void Update()

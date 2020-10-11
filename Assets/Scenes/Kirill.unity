@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116656519}
-  m_Layer: 12
+  m_Layer: 9
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,36 @@ Transform:
   - {fileID: 798379709}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &236879742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 236879743}
+  m_Layer: 0
+  m_Name: GrabTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &236879743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236879742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 734215774}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &424127533
 PrefabInstance:
@@ -348,6 +378,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 424127533}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &734215774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2599733669708709158, guid: 98757170f8882b9469e075df0eeb5b32,
+    type: 3}
+  m_PrefabInstance: {fileID: 424127533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &734215775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +503,7 @@ GameObject:
   - component: {fileID: 798379712}
   - component: {fileID: 798379711}
   - component: {fileID: 798379710}
-  m_Layer: 12
+  m_Layer: 9
   m_Name: test (1)
   m_TagString: WhiteCube
   m_Icon: {fileID: 0}
@@ -500,6 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea334b1f93d8a7f45b512ed6e63937dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabTransform: {fileID: 236879743}
 --- !u!54 &798379711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -640,7 +677,7 @@ GameObject:
   - component: {fileID: 2061404985}
   - component: {fileID: 2061404988}
   - component: {fileID: 2061404989}
-  m_Layer: 12
+  m_Layer: 9
   m_Name: test
   m_TagString: WhiteCube
   m_Icon: {fileID: 0}
@@ -748,3 +785,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea334b1f93d8a7f45b512ed6e63937dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grabTransform: {fileID: 236879743}

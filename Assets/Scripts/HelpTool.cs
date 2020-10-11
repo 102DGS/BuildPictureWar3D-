@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class HelpTool
 {
-    
+    public static LayerMask selectableLayerMask = 512;
     public static Color[] imageToByteArray(string filePath)
     {
         byte[] imageData = File.ReadAllBytes(filePath);
