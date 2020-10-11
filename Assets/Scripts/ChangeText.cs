@@ -5,21 +5,20 @@ using UnityEngine.UI;
 
 public class ChangeText : MonoBehaviour
 {
-    int startFontSize;
-    Vector3 startScale;
+    private int startFontSize;
 
     private void Awake()
     {
-        startScale = GetComponent<Button>().transform.localScale;
+        startFontSize = GetComponentInChildren<Text>().fontSize;
     }
 
     void OnMouseOver()
     {
-        GetComponent<Button>().transform.localScale = startScale + new Vector3(0.5f, 0.5f, 0f);
+        GetComponentInChildren<Text>().fontSize = startFontSize + 5;
     }
 
     void OnMouseExit()
     {
-        GetComponent<Button>().transform.localScale = startScale;
+        GetComponentInChildren<Text>().fontSize = startFontSize;
     }
 }
