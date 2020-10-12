@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ChangeText : MonoBehaviour
+public class ChangeText : EventTrigger
 {
     private int startFontSize;
 
@@ -12,13 +13,21 @@ public class ChangeText : MonoBehaviour
         startFontSize = GetComponentInChildren<Text>().fontSize;
     }
 
-    void OnMouseOver()
+
+
+    public void MouseOn()
     {
-        GetComponentInChildren<Text>().fontSize = startFontSize + 5;
+        GetComponentInChildren<Text>().fontSize = startFontSize - 5;
     }
 
-    void OnMouseExit()
+
+    public void MouseOut()
     {
         GetComponentInChildren<Text>().fontSize = startFontSize;
+    }
+
+    public void Click()
+    {
+        Debug.Log("Hello");
     }
 }
