@@ -8,7 +8,8 @@ public class PlaceForPictures : MonoBehaviour
     private int columns;
 
     private Plane plane;
-
+    private GameObject cube;
+    public GameObject picture;
 
     private void Awake()
     {
@@ -48,6 +49,9 @@ public class PlaceForPictures : MonoBehaviour
         
         
         plane = Resources.Load<Plane>("Plane");
+        cube = Resources.Load<GameObject>("Cube");
+
+
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
@@ -55,6 +59,9 @@ public class PlaceForPictures : MonoBehaviour
                 Plane newPlane = Instantiate(plane, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
                 newPlane.transform.parent = transform;
                 newPlane.Color = colors[i * columns + j];
+
+                GameObject newCube = Instantiate(cube, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
+                newCube.GetComponent<Renderer>().material.color = colors[i * columns + j];
             }
         }
     }
