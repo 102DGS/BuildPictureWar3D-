@@ -17,7 +17,7 @@ public class ChangeText : EventTrigger
 
     public void MouseOn()
     {
-        GetComponentInChildren<Text>().fontSize = startFontSize - 5;
+        GetComponentInChildren<Text>().fontSize = startFontSize + 5;
     }
 
 
