@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ChangeText : EventTrigger
+public class ss : EventTrigger
 {
     private int startFontSize;
 

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2079175378614596259}
   - component: {fileID: 3316303489845891151}
   - component: {fileID: -7945220344640041443}
+  - component: {fileID: 4305408045123974757}
+  - component: {fileID: 3712950765033803388}
   m_Layer: 9
   m_Name: WhiteCube
   m_TagString: WhiteCube
@@ -102,14 +104,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079175378614596258}
   serializedVersion: 2
-  m_Mass: 0.1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &-7945220344640041443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +124,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b677d1977a58e5646bd9eaf1bc6f75ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGrabed: 0
+--- !u!114 &4305408045123974757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079175378614596258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea334b1f93d8a7f45b512ed6e63937dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravitationSpeed: 10
+--- !u!114 &3712950765033803388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079175378614596258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ce51fc22e2f8144910a2bfb8157432, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sendTriggerMessage: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 311
+  skinWidth: 0.1

@@ -43,13 +43,13 @@ public class PlaceForPictures : MonoBehaviour
     private void SpawnPlates()
     {
         string picturesPath = Application.dataPath + "/Pictures";  //Путь к папке с картинками
-        int numperOfPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures"); // количество картинок в папке
-        Color[] colors = HelpTool.imageToByteArray(picturesPath + $"/{Random.Range(1,numperOfPictures+1)}.png", out rows, out columns); // случайный выбор картинки и запись ее цветов в массив
+        int numberOfPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures"); // количество картинок в папке
+        Color[] colors = HelpTool.imageToByteArray(picturesPath + $"/{Random.Range(1,numberOfPictures+1)}.png", out rows, out columns); // случайный выбор картинки и запись ее цветов в массив
         
         
         
         plane = Resources.Load<Plane>("Plane");
-        cube = Resources.Load<GameObject>("Cube");
+        cube = Resources.Load<GameObject>("RedCube");
 
 
         for (int i = 0; i < rows; i++)

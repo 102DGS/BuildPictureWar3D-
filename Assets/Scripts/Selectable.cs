@@ -5,9 +5,14 @@ using UnityEngine;
 public class Selectable : MonoBehaviour
 {
     Color defaultColor;
+    Rigidbody rb;
+    public float gravitationSpeed;
+    Renderer _renderer;
     private void Awake()
     {
-        defaultColor = GetComponent<Renderer>().material.color;
+        _renderer = GetComponent<Renderer>();
+        defaultColor = _renderer.material.color;
+        rb = GetComponent<Rigidbody>();
     }
    
 
@@ -17,18 +22,29 @@ public class Selectable : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.yellow;
         this.transform.parent = transform;
         GetComponent<Cube>().isGrabed = true;
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        rb.useGravity = false;
         gameObject.layer = LayerMask.NameToLayer("Grabed");
     }
     public void Deselect()
     {
+        rb.useGravity = true;
         GetComponent<Renderer>().material.color = defaultColor;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
         this.transform.parent = null;
         GetComponent<Cube>().isGrabed = false;
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         gameObject.layer = LayerMask.NameToLayer("Cube");
+        rb.constraints = RigidbodyConstraints.None;
 
     }
-    
+    private void Update()
+    {
+        if (GetComponent<Cube>().isGrabed) toPoint();
+    }
+    private void toPoint()
+    {
+        var target = transform.parent.position - transform.position + transform.parent.forward*3;
+        rb.velocity = target * gravitationSpeed;
+;
+    }
 }
+
