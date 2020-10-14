@@ -169,17 +169,17 @@ PrefabInstance:
     - target: {fileID: 6394279899152766932, guid: bb3d167d6a217d54da8318084bdccc7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.02
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6394279899152766932, guid: bb3d167d6a217d54da8318084bdccc7e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.37
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6394279899152766932, guid: bb3d167d6a217d54da8318084bdccc7e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.15
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6394279899152766932, guid: bb3d167d6a217d54da8318084bdccc7e,
         type: 3}
@@ -9395,6 +9395,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485968498}
   m_Mesh: {fileID: 1735339645}
+--- !u!1 &1541192536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6394279898960796536, guid: bb3d167d6a217d54da8318084bdccc7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 59659001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1541192537
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541192536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.53302884, z: 1}
+  m_Center: {x: 0, y: -0.23348558, z: 0}
 --- !u!1001 &1545537294
 PrefabInstance:
   m_ObjectHideFlags: 0
