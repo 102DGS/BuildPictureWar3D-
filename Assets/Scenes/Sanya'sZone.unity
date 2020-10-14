@@ -1381,7 +1381,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh65132
+  m_Name: pb_Mesh13956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3656,7 +3656,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh64998
+  m_Name: pb_Mesh13822
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8276,7 +8276,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh65070
+  m_Name: pb_Mesh13894
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8770,25 +8770,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1294299552}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1320470519 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4641690889201650269, guid: eee55fffe4e6c3b4f971fa641ae7729a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1022437308}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1320470525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320470519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea334b1f93d8a7f45b512ed6e63937dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravitationSpeed: 0
 --- !u!1 &1338021417
 GameObject:
   m_ObjectHideFlags: 0
@@ -9505,7 +9486,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh65298
+  m_Name: pb_Mesh14118
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9870,7 +9851,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh65230
+  m_Name: pb_Mesh14050
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10098,6 +10079,16 @@ PrefabInstance:
         type: 3}
       propertyPath: layerMask.m_Bits
       value: 1335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683891757544079620, guid: 99c09c6454907db49884e95dc815ef8c,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5683891757544079620, guid: 99c09c6454907db49884e95dc815ef8c,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99c09c6454907db49884e95dc815ef8c, type: 3}

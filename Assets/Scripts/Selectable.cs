@@ -8,6 +8,7 @@ public class Selectable : MonoBehaviour
     Rigidbody rb;
     public float gravitationSpeed;
     Renderer _renderer;
+
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
@@ -24,6 +25,7 @@ public class Selectable : MonoBehaviour
         GetComponent<Cube>().isGrabed = true;
         rb.useGravity = false;
         gameObject.layer = LayerMask.NameToLayer("Grabed");
+        rb.constraints = RigidbodyConstraints.None;
     }
     public void Deselect()
     {
