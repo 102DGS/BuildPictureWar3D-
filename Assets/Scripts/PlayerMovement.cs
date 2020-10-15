@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     Vector3 velocity;
     public Transform groundCheck;
-    private float groundDistance = 0.1f;
+    private float groundDistance = 0.49f;
     private LayerMask groundMask;
     bool isGrounded;
     public float jumpHeight = 3f;
@@ -46,6 +46,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(groundCheck.position, 0.1f);
+        Gizmos.DrawSphere(groundCheck.position, 0.49f);
     }
 }

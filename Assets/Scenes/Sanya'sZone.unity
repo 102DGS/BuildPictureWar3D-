@@ -229,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 6394279899152766933, guid: bb3d167d6a217d54da8318084bdccc7e,
         type: 3}
       propertyPath: m_StepOffset
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6394279899152766933, guid: bb3d167d6a217d54da8318084bdccc7e,
         type: 3}
@@ -241,10 +241,15 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6394279898960796536, guid: bb3d167d6a217d54da8318084bdccc7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6394279898960794759, guid: bb3d167d6a217d54da8318084bdccc7e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.91
+      value: -0.519
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb3d167d6a217d54da8318084bdccc7e, type: 3}
