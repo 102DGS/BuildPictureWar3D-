@@ -18,7 +18,7 @@ public class PlaceForPictures : MonoBehaviour
 
     void Update()
     {
-        if (CheckPicture()) Victory();  
+        if (CheckPicture()) Victory();
     }
 
     private bool CheckPicture()
