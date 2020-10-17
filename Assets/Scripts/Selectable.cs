@@ -45,8 +45,9 @@ public class Selectable : MonoBehaviour
     private void toPoint()
     {
         var target = transform.parent.position - transform.position + transform.parent.forward*3;
-        rb.velocity = target * gravitationSpeed;
-;
+        
+        rb.velocity = target*gravitationSpeed;
+
     }
 }
 
