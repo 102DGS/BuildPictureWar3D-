@@ -7,14 +7,20 @@ public class SpawnerBlocks : MonoBehaviour
     public PlaceForPictures pFP;
     public Cube cube;
 
+    private float timeForSpawn = 0f;
+
     public Cube[] randomCubes;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && timeForSpawn <= 0f)
         {
             int index = Random.Range(0, 3);
             Cube newCube = Instantiate(randomCubes[index], transform.position, transform.rotation);
+
+            timeForSpawn = 1f;
         }
+
+        timeForSpawn -= Time.deltaTime;
     }
 }
