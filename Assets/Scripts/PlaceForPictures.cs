@@ -6,13 +6,16 @@ public class PlaceForPictures : MonoBehaviour
 {
     private int rows;
     private int columns;
-
+    Color[] colors;
     private Plane plane;
     private GameObject cube;
     public GameObject picture;
 
     private void Awake()
     {
+        string picturesPath = Application.dataPath + "/Pictures";  //Путь к папке с картинками
+        int numberOfPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures"); // количество картинок в папке
+        colors = HelpTool.imageToByteArray(picturesPath + $"/{Random.Range(1, numberOfPictures + 1)}.png", out rows, out columns); // случайный выбор картинки и запись ее цветов в массив
         SpawnPlates();
     }
 
@@ -42,9 +45,8 @@ public class PlaceForPictures : MonoBehaviour
 
     private void SpawnPlates()
     {
-        string picturesPath = Application.dataPath + "/Pictures";  //Путь к папке с картинками
-        int numberOfPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures"); // количество картинок в папке
-        Color[] colors = HelpTool.imageToByteArray(picturesPath + $"/{Random.Range(1,numberOfPictures+1)}.png", out rows, out columns); // случайный выбор картинки и запись ее цветов в массив
+        
+        
         
         
         
