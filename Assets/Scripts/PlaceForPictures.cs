@@ -9,7 +9,7 @@ public class PlaceForPictures : MonoBehaviour
     private bool isVictory = false;
 
 
-    Color[] colors;
+    public Color[] colors;
     private Plane plane;
     private GameObject cube;
     public GameObject picture;

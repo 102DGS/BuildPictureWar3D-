@@ -5,18 +5,19 @@ using UnityEngine;
 public class SpawnerBlocks : MonoBehaviour
 {
     public PlaceForPictures pFP;
+    private int cubeIndex = 0;
+
     public Cube cube;
 
     private float timeForSpawn = 0f;
 
-    public Cube[] randomCubes;
-
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && cubeIndex < pFP.colors.Length)
         {
-            int index = Random.Range(0, 3);
-            Cube newCube = Instantiate(randomCubes[index], transform.position, transform.rotation);
+            cube.gameObject.GetComponent<Renderer>().sharedMaterial.color = pFP.colors[cubeIndex];
+            Cube newCube = Instantiate(cube, transform.position, transform.rotation);
+            cubeIndex++;
 
             timeForSpawn = 1f;
         }
