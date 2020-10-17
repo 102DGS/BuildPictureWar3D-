@@ -73,5 +73,12 @@ public class Interaction : MonoBehaviour
                 startButton.StartGame();
             }
         }
+
+        if (Physics.Raycast(ray, out hit, 5f) && hit.collider.gameObject.CompareTag("RestartButton"))
+        {
+            RestartButton restartButton = hit.collider.gameObject?.GetComponent<RestartButton>();
+
+            restartButton.RestartGame();
+        }
     }
 }

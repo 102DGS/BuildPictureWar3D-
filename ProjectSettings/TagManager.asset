@@ -8,6 +8,7 @@ TagManager:
   - BlueCube
   - RedCube
   - StartButton
+  - RestartButton
   layers:
   - Default
   - TransparentFX
