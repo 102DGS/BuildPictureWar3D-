@@ -16,8 +16,8 @@ public class Picture
         shufflingColors = shufflingColor();
     }
 
-    
 
+    public static int currentPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures/");
     private Color[] shufflingColor()
     {
         HashSet<int> numbers = new HashSet<int>();
