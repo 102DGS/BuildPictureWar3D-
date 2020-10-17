@@ -29,10 +29,14 @@ public class Cube : MonoBehaviour
     {
         if (transform.position.y <= -15f)
         {
+            GetComponent<DontGoThroughThings>().enabled = false;
             transform.position = startPosition + new Vector3(0f, 3f, 0f);
             transform.rotation = startRotation;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
         }
+        
+        
     }
 }

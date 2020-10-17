@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float leftTime = 120f;
+    private float leftTime = 40f;
     public Text timerText;
 
     private void Awake()

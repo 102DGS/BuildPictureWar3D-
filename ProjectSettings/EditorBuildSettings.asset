@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 5dc4e14ec3f8e464681feda0644615ae
+  - enabled: 1
+    path: Assets/Scenes/Sanya'sZone.unity
+    guid: 32854388086bd54468f4352518cfb1b6
   m_configObjects: {}
