@@ -9,7 +9,7 @@ public class Interaction : MonoBehaviour
     public GameObject head;
     Selectable selectable;
     LayerMask myLayerMask;
-    public int maxDistance = 10;
+    private int maxDistance = 5;
     bool isGrabed = false;
 
     void Start()
@@ -25,7 +25,11 @@ public class Interaction : MonoBehaviour
             else { Ungrab(); }
             
         }
-           
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Activate();
+        }
     }
 
     private void Ungrab()
@@ -52,4 +56,22 @@ public class Interaction : MonoBehaviour
        
     }
 
+    private void Activate()
+    {
+        ray = new Ray(head.transform.position, head.transform.forward);
+
+        Debug.DrawRay(head.transform.position, head.transform.forward * 5, Color.yellow);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 5f) && hit.collider.gameObject.CompareTag("StartButton")) // CompareTag - сравнивает тег объекта с тегом в параметре метода (в данном случае с "StartButton")
+        {
+            StartButton startButton = hit.collider.gameObject?.GetComponent<StartButton>();
+
+            if (!startButton.Pressed)
+            {
+                startButton.StartGame();
+            }
+        }
+    }
 }

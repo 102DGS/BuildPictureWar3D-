@@ -6,6 +6,7 @@ public class PlaceForPictures : MonoBehaviour
 {
     private int rows;
     private int columns;
+    private bool isVictory = false;
 
     private Plane plane;
     private GameObject cube;
@@ -18,7 +19,12 @@ public class PlaceForPictures : MonoBehaviour
 
     void Update()
     {
-        if (CheckPicture()) Victory();
+        if (CheckPicture() && !isVictory)
+        {
+            Victory();
+            isVictory = true;
+        }
+            
     }
 
     private bool CheckPicture()
@@ -40,7 +46,7 @@ public class PlaceForPictures : MonoBehaviour
         Debug.Log("Victory");
     }
 
-    private void SpawnPlates()
+    public void SpawnPlates()
     {
         string picturesPath = Application.dataPath + "/Pictures";  //Путь к папке с картинками
         int numberOfPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures"); // количество картинок в папке

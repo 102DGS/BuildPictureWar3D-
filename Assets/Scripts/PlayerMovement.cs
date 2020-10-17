@@ -23,8 +23,7 @@ public class PlayerMovement : MonoBehaviour
         Run();
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (Input.GetButtonDown("Jump") && isGrounded) Jump();
-        if (!isGrounded) FreeFall();
-        
+        if (!isGrounded) FreeFall();        
     }
     private void Run()
     {
@@ -44,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(groundCheck.position, 0.49f);
-    }
+    }*/
 }

@@ -7,6 +7,7 @@ TagManager:
   - WhiteCube
   - BlueCube
   - RedCube
+  - StartButton
   layers:
   - Default
   - TransparentFX
