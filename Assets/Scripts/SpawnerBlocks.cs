@@ -13,7 +13,7 @@ public class SpawnerBlocks : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && timeForSpawn <= 0f)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             int index = Random.Range(0, 3);
             Cube newCube = Instantiate(randomCubes[index], transform.position, transform.rotation);
