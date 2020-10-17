@@ -10,15 +10,19 @@ public class PlaceForPictures : MonoBehaviour
 
 
     public Color[] colors;
+    public Color[] randomColors;
     private Plane plane;
     private GameObject cube;
     public GameObject picture;
+    Picture _picture;
 
     private void Awake()
     {
-        string picturesPath = Application.dataPath + "/Pictures";  //Путь к папке с картинками
-        int numberOfPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures"); // количество картинок в папке
-        colors = HelpTool.imageToByteArray(picturesPath + $"/{Random.Range(1, numberOfPictures + 1)}.png", out rows, out columns); // случайный выбор картинки и запись ее цветов в массив
+        _picture = new Picture(Random.Range(0, 3));
+        colors = _picture.colors;
+        rows = _picture.height;
+        columns = _picture.width;
+        randomColors = _picture.shufflingColors;
         SpawnPlates();
     }
 
@@ -59,7 +63,7 @@ public class PlaceForPictures : MonoBehaviour
         
         
         plane = Resources.Load<Plane>("Plane");
-        cube = Resources.Load<GameObject>("RedCube");
+        cube = Resources.Load<GameObject>("Cube");
 
 
         for (int i = 0; i < rows; i++)
