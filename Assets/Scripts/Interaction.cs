@@ -45,7 +45,6 @@ public class Interaction : MonoBehaviour
         ray = new Ray(head.transform.position, head.transform.forward);
         if (Physics.Raycast(ray, out hit, maxDistance, layerMask: myLayerMask))
         {
-            Debug.Log("grab");
             selectable = hit.collider.gameObject?.GetComponent<Selectable>();
             if (selectable)
             {
