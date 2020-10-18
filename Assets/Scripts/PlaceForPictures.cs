@@ -63,8 +63,8 @@ public class PlaceForPictures : MonoBehaviour
         
         
         plane = Resources.Load<Plane>("Plane");
-        cube = Resources.Load<GameObject>("Default");
-
+        var ground = Resources.Load<GameObject>("Default");
+        cube = Resources.Load<GameObject>("Cube");
 
         for (int i = -1; i < rows+1; i++)
         {
@@ -72,17 +72,21 @@ public class PlaceForPictures : MonoBehaviour
             {
                 if (i == -1 || j == -1 || i == rows || j == columns)
                 {
-                    GameObject newCube = Instantiate(cube, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
-                    newCube.transform.parent = transform;
+                    GameObject newCube1 = Instantiate(ground, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
+                    newCube1.transform.parent = transform;
+                    GameObject newCube2 = Instantiate(ground, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
+                    newCube2.transform.parent = transform;
                 }
                 else
                 {
                     Plane newPlane = Instantiate(plane, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
                     newPlane.transform.parent = transform;
                     newPlane.Color = colors[i * columns + j];
+                    cube.GetComponent<Renderer>().sharedMaterial.color = colors[i * columns + j];
+                    GameObject newCube = Instantiate(cube, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
+                    newCube.transform.parent = transform;
                 }
-                //cube.GetComponent<Renderer>().sharedMaterial.color = colors[i * columns + j];
-                //GameObject newCube = Instantiate(cube, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
+                
             }
         }
 
