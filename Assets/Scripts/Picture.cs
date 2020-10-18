@@ -12,12 +12,12 @@ public class Picture
 
     public Picture(int imgNumber)
     {
-        colors = HelpTool.imageToByteArray(Application.dataPath + "/Pictures/" + imgNumber + ".png",out height, out width);
+        colors = HelpTool.imageToByteArray(Application.dataPath + "/Pictures/" + "Test/" + imgNumber + ".png",out height, out width);
         shufflingColors = shufflingColor();
     }
 
 
-    public static int currentPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures/");
+    public static int currentPictures = HelpTool.numberOfPngInDirectory(Application.dataPath + "/Pictures/" + "Test/");
     private Color[] shufflingColor()
     {
         HashSet<int> numbers = new HashSet<int>();

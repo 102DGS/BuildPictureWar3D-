@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 2079175378614596258, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
         type: 3}
       propertyPath: m_Name
-      value: DefaultCube
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 2079175378614596258, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2079175378614596286, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
         type: 3}
@@ -67,10 +72,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3316303489845891151, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316303489845891151, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316303489845891151, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316303489845891151, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2079175378614596284, guid: 2ac2d15c218e353438c327c7bb3b1c1e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ccc87f256b5848c4eab2c3b466fe8812, type: 2}
+      objectReference: {fileID: 2100000, guid: 60fb10b478fc2a54fa7be832fe1bd70d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac2d15c218e353438c327c7bb3b1c1e, type: 3}
