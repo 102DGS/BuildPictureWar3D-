@@ -5,12 +5,19 @@ using UnityEngine;
 public class CharacterMove : MonoBehaviour
 {
     private float speed = 5f;
-    private float jumpForce = 5f;
+    private float jumpForce = 10f;
     private Rigidbody _rigidbody;
+
+    private Vector3 checkGroundSize = new Vector3(1f, 0.0001f, 1f);
+
+    private bool isGrounded;
+    private LayerMask groundMask; 
+
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        groundMask = 256;
     }
 
     void Update()
@@ -20,7 +27,15 @@ public class CharacterMove : MonoBehaviour
             Run();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Mouse2))
+        {
+            Debug.Log(isGrounded);
+        }
+
+        isGrounded = Physics.CheckBox(transform.position, checkGroundSize, transform.rotation, groundMask);
+        
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
         }
@@ -37,5 +52,10 @@ public class CharacterMove : MonoBehaviour
     private void Jump()
     {
         _rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(transform.position, checkGroundSize);
     }
 }
