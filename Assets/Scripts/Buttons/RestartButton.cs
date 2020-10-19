@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RestartButton : MonoBehaviour
+public class RestartButton : Button
 {
-    public void RestartGame()
+    public override void OnPressed()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
