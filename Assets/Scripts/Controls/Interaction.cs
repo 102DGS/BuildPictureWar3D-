@@ -31,14 +31,15 @@ public class Interaction : MonoBehaviour
         ray = new Ray(head.transform.position, head.transform.forward);
         Debug.DrawRay(head.transform.position, head.transform.forward * 5, Color.yellow);
 
-        if (Input.GetMouseButtonDown(0)) 
+
+        if (Input.GetMouseButtonDown(0))
         {
             if (!isGrabed) { Grab(); }
             else { Ungrab(); }
-            
+
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && Physics.Raycast(ray, out hit, maxDistance))
         {
             Activate();
         }
@@ -73,27 +74,16 @@ public class Interaction : MonoBehaviour
                 isGrabed = true;
             }
         }
-       
+
     }
 
     private void Activate()
     {
-        ray = new Ray(head.transform.position, head.transform.forward);
+        var button = hit.collider.gameObject?.GetComponent<Button>();
 
-        Debug.DrawRay(head.transform.position, head.transform.forward * 5, Color.yellow);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 5f)) 
+        if (button)
         {
-            var button = hit.collider.gameObject?.GetComponent<Button>();
-
-            Debug.Log(button);
-            if (button)
-            {
-                button.OnPressed();
-            }
+            button.OnPressed();
         }
-
     }
 }
