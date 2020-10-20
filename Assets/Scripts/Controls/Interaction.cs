@@ -84,7 +84,7 @@ public class Interaction : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 5f)) // CompareTag - сравнивает тег объекта с тегом в параметре метода (в данном случае с "StartButton")
+        if (Physics.Raycast(ray, out hit, 5f)) 
         {
             var button = hit.collider.gameObject?.GetComponent<Button>();
 
@@ -95,11 +95,5 @@ public class Interaction : MonoBehaviour
             }
         }
 
-        /*if (Physics.Raycast(ray, out hit, 5f))
-        {
-            Button restartButton = hit.collider.gameObject?.GetComponent<RestartButton>();
-
-            restartButton.OnPressed();
-        }*/
     }
 }

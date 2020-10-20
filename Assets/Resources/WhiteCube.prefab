@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2079175378614596259}
   - component: {fileID: 3316303489845891151}
   - component: {fileID: -7945220344640041443}
-  - component: {fileID: 4305408045123974757}
   - component: {fileID: 3712950765033803388}
   m_Layer: 9
   m_Name: WhiteCube
@@ -124,20 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b677d1977a58e5646bd9eaf1bc6f75ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravitationSpeed: 0
   isGrabed: 0
---- !u!114 &4305408045123974757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079175378614596258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea334b1f93d8a7f45b512ed6e63937dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravitationSpeed: 10
 --- !u!114 &3712950765033803388
 MonoBehaviour:
   m_ObjectHideFlags: 0
