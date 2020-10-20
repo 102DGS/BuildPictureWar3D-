@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Button : MonoBehaviour
+public abstract class Button : UseableObjects
 {
     protected float speed = 0.1f;
     protected Vector3 direction = new Vector3(-0.01f, 0f, 0f);

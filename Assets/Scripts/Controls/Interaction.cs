@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Interaction : MonoBehaviour
 {
@@ -12,9 +13,17 @@ public class Interaction : MonoBehaviour
     private int maxDistance = 5;
     bool isGrabed = false;
 
+    private Vector3 onNotUseableAimPointScale;
+    private Vector3 onUseableAimPointScale;
+
+    public Canvas aimCanvas;
+    public RawImage img;
+
     void Start()
     {
         myLayerMask = HelpTool.selectableLayerMask;
+        onNotUseableAimPointScale = img.GetComponent<RectTransform>().localScale;
+        onUseableAimPointScale = onNotUseableAimPointScale + new Vector3(1f, 1f, 0f);
     }
 
     private void Update()
@@ -29,6 +38,18 @@ public class Interaction : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             Activate();
+        }
+
+        ray = new Ray(head.transform.position, head.transform.forward);
+        Debug.DrawRay(head.transform.position, head.transform.forward * 5, Color.yellow);
+
+        if (Physics.Raycast(ray, out hit, maxDistance) && hit.collider.gameObject?.GetComponent<UseableObjects>())
+        {
+            img.GetComponent<RectTransform>().localScale = onUseableAimPointScale;
+        }
+        else
+        {
+            img.GetComponent<RectTransform>().localScale = onNotUseableAimPointScale;
         }
     }
 
@@ -67,8 +88,11 @@ public class Interaction : MonoBehaviour
         {
             var button = hit.collider.gameObject?.GetComponent<Button>();
 
-            button.OnPressed();
-            
+            Debug.Log(button);
+            if (button)
+            {
+                button.OnPressed();
+            }
         }
 
         /*if (Physics.Raycast(ray, out hit, 5f))
