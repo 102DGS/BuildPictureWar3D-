@@ -28,6 +28,9 @@ public class Interaction : MonoBehaviour
 
     private void Update()
     {
+        ray = new Ray(head.transform.position, head.transform.forward);
+        Debug.DrawRay(head.transform.position, head.transform.forward * 5, Color.yellow);
+
         if (Input.GetMouseButtonDown(0)) 
         {
             if (!isGrabed) { Grab(); }
@@ -39,9 +42,6 @@ public class Interaction : MonoBehaviour
         {
             Activate();
         }
-
-        ray = new Ray(head.transform.position, head.transform.forward);
-        Debug.DrawRay(head.transform.position, head.transform.forward * 5, Color.yellow);
 
         if (Physics.Raycast(ray, out hit, maxDistance) && hit.collider.gameObject?.GetComponent<UseableObjects>())
         {
