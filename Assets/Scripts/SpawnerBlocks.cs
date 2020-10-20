@@ -31,9 +31,10 @@ public class SpawnerBlocks : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && cubeIndex < pFP.randomColors.Length)
         {
-            
-            cube.gameObject.GetComponent<Renderer>().sharedMaterial.color = pFP.randomColors[cubeIndex];
+
             Cube newCube = Instantiate(cube, transform.position, transform.rotation);
+
+            newCube.gameObject.GetComponent<Renderer>().material.color = pFP.randomColors[cubeIndex];
             cubeIndex++;
 
         }
