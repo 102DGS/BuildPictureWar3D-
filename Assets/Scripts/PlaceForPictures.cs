@@ -63,7 +63,7 @@ public class PlaceForPictures : MonoBehaviour
         
         
         plane = Resources.Load<Plane>("Plane");
-        var ground = Resources.Load<GameObject>("Default");
+        var ground = Resources.Load<GameObject>("Ground");
         cube = Resources.Load<GameObject>("Cube");
 
         for (int i = -1; i < rows+1; i++)
