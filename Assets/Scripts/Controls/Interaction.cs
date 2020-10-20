@@ -23,7 +23,7 @@ public class Interaction : MonoBehaviour
     {
         myLayerMask = HelpTool.selectableLayerMask;
         onNotUseableAimPointScale = img.GetComponent<RectTransform>().localScale;
-        onUseableAimPointScale = onNotUseableAimPointScale + new Vector3(1f, 1f, 0f);
+        onUseableAimPointScale = onNotUseableAimPointScale + new Vector3(0.5f, 0.5f, 0f);
     }
 
     private void Update()
