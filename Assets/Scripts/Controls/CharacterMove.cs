@@ -22,22 +22,23 @@ public class CharacterMove : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
-        {
-            Run();
-        }
-
         if (Input.GetKeyDown(KeyCode.Mouse2))
         {
-            Debug.Log(isGrounded);
+
         }
 
         isGrounded = Physics.CheckBox(transform.position, checkGroundSize, transform.rotation, groundMask);
-        
-
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        {
+            Run();
         }
     }
 
