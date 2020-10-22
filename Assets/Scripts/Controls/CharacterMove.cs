@@ -24,10 +24,11 @@ public class CharacterMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse2))
         {
-
+            Debug.Log(Input.GetAxis("Horizontal") + " " + Input.GetAxis("Vertical"));
         }
 
         isGrounded = Physics.CheckBox(transform.position, checkGroundSize, transform.rotation, groundMask);
+
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
@@ -36,10 +37,11 @@ public class CharacterMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        /*if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             Run();
-        }
+        }*/
+        Run();
     }
 
     private void Run()
