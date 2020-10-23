@@ -6,14 +6,14 @@ public class Cube : Selectable
 {
     public float gravitationSpeed;
     public bool isGrabed = false;
-    
+    Renderer _renderer;
 
   
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-
+        _renderer = GetComponent<Renderer>();
     }
 
     void Update()
@@ -46,5 +46,9 @@ public class Cube : Selectable
 
         _rigidbody.velocity = target * gravitationSpeed;
 
+    }
+    public void ChangeColor(Color color)
+    {
+        _renderer.material.color = color;
     }
 }

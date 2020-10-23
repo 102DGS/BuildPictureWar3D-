@@ -60,14 +60,18 @@ public class PlaceForPictures : MonoBehaviour
         plane = Resources.Load<Plane>("Plane");
         var ground = Resources.Load<GameObject>("Ground");
         cube = Resources.Load<GameObject>("Cube");
+
         var picturePattern = new GameObject("PicturePattern");
+
+
         var pictureFrame = new GameObject("PictureFrame");
-        var picturePixels = new GameObject("PicturePixels");
         pictureFrame.transform.parent = picturePattern.transform;
-        pictureFrame.AddComponent<MeshCombiner>();
         pictureFrame.AddComponent<MeshRenderer>();
+
+        var picturePixels = new GameObject("PicturePixels");
         pictureFrame.AddComponent<MeshFilter>();
         picturePixels.transform.parent = picturePattern.transform;
+
         for (int i = -1; i < rows+1; i++)
         {
             for (int j = -1; j < columns+1; j++)
