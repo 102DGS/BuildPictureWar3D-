@@ -6,9 +6,15 @@ public class Weapon : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject mouth;
+    public PlaceForPictures pFP;
+    int i = 0;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl)) Shoot(Color.red,5f);
+        if (Input.GetKeyDown(KeyCode.LeftControl) && pFP.isActiveAndEnabled)
+        {
+            Shoot(pFP.randomColors[i], 5f);
+            i = (i + 1) % pFP.randomColors.Length;
+        }
     }
 
     void Shoot(Color color,float speed)
