@@ -37,11 +37,10 @@ public class CharacterMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /*if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
             Run();
-        }*/
-        Run();
+        }
     }
 
     private void Run()
