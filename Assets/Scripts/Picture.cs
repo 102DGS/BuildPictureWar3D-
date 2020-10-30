@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class Picture 
 {
+    static public Color neutralColor = Color.white;
     public Color[] colors;
     public Color[] shufflingColors;
+    public Color[] setColors;
     public int width;
     public int height;
 
@@ -14,6 +16,7 @@ public class Picture
     {
         colors = HelpTool.imageToByteArray(Application.dataPath + "/Pictures/" + "Test/" + imgNumber + ".png",out height, out width);
         shufflingColors = shufflingColor();
+        setColors = shufflingColors.Distinct().Where(x => x != neutralColor).ToArray(); ;
     }
 
 

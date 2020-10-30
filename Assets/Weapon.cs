@@ -17,11 +17,12 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.LeftControl) && pFP.gameObject.activeSelf)
         {
-            Shoot(pFP.randomColors[i], 5f);
-            i = (i + 1) % pFP.randomColors.Length;
-            _renderer.material.color = pFP.randomColors[i];
+            Shoot(pFP.setColors[i], 5f);
+            i = (i + 1) % pFP.setColors.Length;
+            _renderer.material.color = pFP.setColors[i];
         }
     }
 

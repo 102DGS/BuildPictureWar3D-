@@ -11,6 +11,7 @@ public class PlaceForPictures : MonoBehaviour
 
     public Color[] colors;
     public Color[] randomColors;
+    public Color[] setColors;
     private Plane plane;
     private GameObject cube;
     public GameObject picture;
@@ -18,11 +19,13 @@ public class PlaceForPictures : MonoBehaviour
 
     private void Awake()
     {
-        _picture = new Picture(1+Random.Range(0, Picture.currentPictures));
+        //_picture = new Picture(1+Random.Range(0, Picture.currentPictures));
+        _picture = new Picture(15);
         colors = _picture.colors;
         rows = _picture.height;
         columns = _picture.width;
         randomColors = _picture.shufflingColors;
+        setColors = _picture.setColors;
         SpawnPlates();
     }
 
@@ -58,18 +61,18 @@ public class PlaceForPictures : MonoBehaviour
     public void SpawnPlates()
     {
         plane = Resources.Load<Plane>("Plane");
-        var ground = Resources.Load<GameObject>("Ground");
+        var frame = Resources.Load<GameObject>("Ground");
         cube = Resources.Load<GameObject>("Cube");
 
         var picturePattern = new GameObject("PicturePattern");
 
 
-        var pictureFrame = new GameObject("PictureFrame");
-        pictureFrame.transform.parent = picturePattern.transform;
-        pictureFrame.AddComponent<MeshRenderer>();
+        var pictureFrames = new GameObject("PictureFrame");
+        pictureFrames.transform.parent = picturePattern.transform;
+        pictureFrames.AddComponent<MeshRenderer>();
 
         var picturePixels = new GameObject("PicturePixels");
-        pictureFrame.AddComponent<MeshFilter>();
+        pictureFrames.AddComponent<MeshFilter>();
         picturePixels.transform.parent = picturePattern.transform;
 
         for (int i = -1; i < rows+1; i++)
@@ -78,20 +81,33 @@ public class PlaceForPictures : MonoBehaviour
             {
                 if (i == -1 || j == -1 || i == rows || j == columns)
                 {
-                    GameObject newCube1 = Instantiate(ground, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
-                    newCube1.transform.parent = transform;
-                    GameObject newCube2 = Instantiate(ground, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
-                    newCube2.transform.parent = pictureFrame.transform;
+                    GameObject groundFrame = Instantiate(frame, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
+                    groundFrame.transform.parent = transform;
+
+
+                    GameObject pictureFrame = Instantiate(frame, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
+                    pictureFrame.transform.parent = pictureFrames.transform;
+
+                    GameObject shootFrame = Instantiate(frame, picture.transform.position + new Vector3(j, i, -10f) - Vector3.up*(rows+10), Quaternion.Euler(0f, 0f, 0f));
+                    shootFrame.transform.parent = transform;
+
                 }
                 else
                 {
-                    Plane newPlane = Instantiate(plane, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
-                    newPlane.transform.parent = transform;
-                    newPlane.Color = colors[i * columns + j];
-                    GameObject newCube = Instantiate(cube, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
-                    newCube.transform.parent = picturePixels.transform;
-                    newCube.GetComponent<Rigidbody>().isKinematic = true;
-                    newCube.GetComponent<Renderer>().material.color = colors[i * columns + j];
+                    Plane groundCube = Instantiate(plane, transform.position + new Vector3(j, 0f, i), Quaternion.Euler(-90f, 0f, 0f));
+                    groundCube.transform.parent = transform;
+                    groundCube.Color = colors[i * columns + j];
+
+
+                    GameObject pictureCube = Instantiate(cube, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
+                    pictureCube.transform.parent = picturePixels.transform;
+                    pictureCube.GetComponent<Rigidbody>().isKinematic = true;
+                    pictureCube.GetComponent<Renderer>().material.color = colors[i * columns + j];
+
+                    if (colors[i * columns + j] == Picture.neutralColor) continue;
+                    GameObject shootCube = Instantiate(cube, picture.transform.position + new Vector3(j, i, -10f) - Vector3.up * (rows + 10), Quaternion.Euler(0f, 0f, 0f));
+                    shootCube.transform.parent = transform;
+                    shootCube.GetComponent<Rigidbody>().isKinematic = true;
                 }
                 
             }
