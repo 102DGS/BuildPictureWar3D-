@@ -90,7 +90,7 @@ public class PlaceForPictures : MonoBehaviour
                     newPlane.Color = colors[i * columns + j];
                     GameObject newCube = Instantiate(cube, picture.transform.position + new Vector3(j, i, 0f), Quaternion.Euler(0f, 0f, 0f));
                     newCube.transform.parent = picturePixels.transform;
-
+                    newCube.GetComponent<Rigidbody>().isKinematic = true;
                     newCube.GetComponent<Renderer>().material.color = colors[i * columns + j];
                 }
                 

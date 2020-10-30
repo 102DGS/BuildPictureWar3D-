@@ -38,6 +38,12 @@ public class SpawnerBlocks : MonoBehaviour
             cubeIndex++;
 
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+            Cube newCube = Instantiate(cube, transform.position, transform.rotation);
+
+        }
 
     }
 }
