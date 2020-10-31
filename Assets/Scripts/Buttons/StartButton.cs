@@ -7,6 +7,7 @@ public class StartButton : Button
 {
     public Canvas canvas;
     public PlaceForPictures pFP;
+    public Weapon weapon;
 
     public override void OnPressed()
     {
@@ -14,5 +15,6 @@ public class StartButton : Button
         pFP.gameObject.SetActive(true);
         Pressed = true;
         ButtonAnimation();
+        weapon.ChangeColor();
     }
 }

@@ -17,12 +17,15 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ChangeColor();
+        }
         if (Input.GetKeyDown(KeyCode.LeftControl) && pFP.gameObject.activeSelf)
         {
             Shoot(pFP.setColors[i], 5f);
-            i = (i + 1) % pFP.setColors.Length;
-            _renderer.material.color = pFP.setColors[i];
+            
+           
         }
     }
 
@@ -31,5 +34,10 @@ public class Weapon : MonoBehaviour
         var bulletInstance = Instantiate(bullet, mouth.transform.position, mouth.transform.rotation) ;
         bulletInstance.GetComponent<Bullet>()._color = color;
         bulletInstance.GetComponent<Bullet>()._speed = speed;
+    }
+    public void ChangeColor()
+    {
+        i = (i + 1) % pFP.setColors.Length;
+        _renderer.material.color = pFP.setColors[i];
     }
 }

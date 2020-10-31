@@ -19,8 +19,8 @@ public class PlaceForPictures : MonoBehaviour
 
     private void Awake()
     {
-        //_picture = new Picture(1+Random.Range(0, Picture.currentPictures));
-        _picture = new Picture(15);
+        _picture = new Picture(1+Random.Range(0, Picture.currentPictures));
+        //_picture = new Picture(15);
         colors = _picture.colors;
         rows = _picture.height;
         columns = _picture.width;
