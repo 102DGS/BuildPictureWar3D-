@@ -2349,6 +2349,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &771603575 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 297637350399919293, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
+    type: 3}
+  m_PrefabInstance: {fileID: 8744320078580039179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290f813eb27324e469b7cf10298f163d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &780430436
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7095,6 +7107,11 @@ PrefabInstance:
       propertyPath: pFP
       value: 
       objectReference: {fileID: 1190741096}
+    - target: {fileID: 1046169818533693700, guid: b23840fc738ccfd46825b64031e8a486,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 771603575}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b23840fc738ccfd46825b64031e8a486, type: 3}
 --- !u!1001 &7972568411935947768
