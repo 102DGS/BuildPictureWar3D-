@@ -3215,7 +3215,7 @@ GameObject:
   - component: {fileID: 1028241103}
   - component: {fileID: 1028241107}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3314,6 +3314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 293551949}
+  gameController: {fileID: 1190741095}
 --- !u!1 &1034401453
 GameObject:
   m_ObjectHideFlags: 0
@@ -7052,7 +7053,32 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5435016399450840304, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435016399450840304, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435016399450840304, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5435016399580027711, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435016399466065031, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435016400660228964, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
         type: 3}
       propertyPath: m_Layer
       value: 0
@@ -7115,31 +7141,6 @@ PrefabInstance:
     - target: {fileID: 4480664767745603846, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435016399450840304, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435016399450840304, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435016399450840304, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435016399466065031, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5435016400660228964, guid: 3615c3b92c5d1a344b9b5985bbc8986a,
-        type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7409,15 +7410,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 297637350399919293, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
-        type: 3}
-      propertyPath: pFP
-      value: 
-      objectReference: {fileID: 1190741096}
     - target: {fileID: 8328332018633762774, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215196578311362692, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8555119727506715757, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
         type: 3}
@@ -7434,10 +7435,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6215196578311362692, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
+    - target: {fileID: 297637350399919293, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
         type: 3}
-      propertyPath: mouseSensitivity
-      value: 150
-      objectReference: {fileID: 0}
+      propertyPath: pFP
+      value: 
+      objectReference: {fileID: 1190741096}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a6f34d0f0b3f54faec5278a8c0f262, type: 3}
