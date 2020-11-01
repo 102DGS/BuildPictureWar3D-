@@ -7354,11 +7354,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 297637350399919293, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
-        type: 3}
-      propertyPath: pFP
-      value: 
-      objectReference: {fileID: 1190741096}
     - target: {fileID: 6389643436870914644, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7414,6 +7409,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 297637350399919293, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
+        type: 3}
+      propertyPath: pFP
+      value: 
+      objectReference: {fileID: 1190741096}
     - target: {fileID: 8328332018633762774, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7433,6 +7433,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215196578311362692, guid: f5a6f34d0f0b3f54faec5278a8c0f262,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a6f34d0f0b3f54faec5278a8c0f262, type: 3}
