@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float leftTime = 40f;
+    private float leftTime = 92f;
     public Text timerText;
 
     private void Awake()
@@ -16,13 +17,17 @@ public class Timer : MonoBehaviour
     void Update()
     {
         leftTime -= Time.deltaTime;
-        if (leftTime > 0)
+        if (leftTime > 2)
         {
             timerText.text = currentTime(leftTime);
         }
-        else
+        else if (leftTime > 0)
         {
             timerText.text = "Time left";
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
