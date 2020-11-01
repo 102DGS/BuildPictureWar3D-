@@ -15,6 +15,7 @@ public class Picture
     public Picture(int imgNumber)
     {
         colors = HelpTool.imageToByteArray(Application.dataPath + "/Pictures/" + "Test/" + imgNumber + ".png",out height, out width);
+        foreach(var col in colors)
         shufflingColors = shufflingColor();
         setColors = shufflingColors.Distinct().Where(x => x != neutralColor).ToArray(); ;
     }
