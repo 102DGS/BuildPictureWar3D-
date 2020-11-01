@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float leftTime = 92f;
+    private float leftTime = 60f;
     public Text timerText;
 
     private void Awake()
@@ -17,11 +17,11 @@ public class Timer : MonoBehaviour
     void Update()
     {
         leftTime -= Time.deltaTime;
-        if (leftTime > 2)
+        if (leftTime > 0)
         {
             timerText.text = currentTime(leftTime);
         }
-        else if (leftTime > 0)
+        else if (leftTime > -2)
         {
             timerText.text = "Time left";
         }
