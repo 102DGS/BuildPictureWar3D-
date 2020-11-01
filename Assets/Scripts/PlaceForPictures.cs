@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,8 @@ public class PlaceForPictures : MonoBehaviour
 {
     private int rows;
     private int columns;
-    private bool isVictory = false;
+    [NonSerialized]
+    public bool isVictory = false;
     public GameObject music;
 
     public Color[] colors;

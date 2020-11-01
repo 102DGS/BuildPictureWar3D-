@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
 {
     private float leftTime = 60f;
     public Text timerText;
+    public GameObject gameController;
 
     private void Awake()
     {
@@ -16,19 +17,28 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        leftTime -= Time.deltaTime;
-        if (leftTime > 0)
+        if (!gameController.GetComponent<PlaceForPictures>().isVictory)
         {
-            timerText.text = currentTime(leftTime);
-        }
-        else if (leftTime > -2)
-        {
-            timerText.text = "Time left";
+            leftTime -= Time.deltaTime;
+
+            if (leftTime > 0)
+            {
+                timerText.text = currentTime(leftTime);
+            }
+            else if (leftTime > -2)
+            {
+                timerText.text = "Time left";
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            timerText.text = "Good work!";
         }
+        
     }
 
     private string currentTime(float leftTime)
